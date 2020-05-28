@@ -1,0 +1,79 @@
+@import "src/styles/global.scss";
+
+.rowContainer {
+  display: flex;
+  flex: 1;
+  height: 60px;
+  margin: 1em 0;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.5em;
+
+
+  .rowContent {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding: 0 4px;
+
+    &:hover {
+      background-color: #fff;
+      cursor: pointer;
+      transition-duration: 250ms;
+      transition-property: background-color;
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 10%;
+    }
+
+    p.owner {
+      margin-left: 1em;
+      flex-grow: 2;
+    }
+
+    .separator {
+      border-bottom: 1px solid $grey-light;
+      height: 1px;
+      width: 100%;
+      flex-grow: 2;
+    }
+
+    .stars {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        color: $accent;
+      }
+    }
+  }
+
+  button.favoriteContainer {
+
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    height: 100%;
+
+    p {
+      margin: 0;
+      font-size: 24px;
+      padding: 4px;
+      color: $iconHeart;
+    }
+
+  }
+
+  button.favoriteRepo p {
+    color: $iconHeartActive;
+
+  }
+
+
+}

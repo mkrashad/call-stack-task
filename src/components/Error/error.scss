@@ -1,0 +1,24 @@
+@import "../../styles/global";
+
+.errorMessage {
+  padding: 0.2em;
+  background: #fff;
+  border-radius: 1em;
+  border: 1px solid $grey-light;
+  display: flex;
+  max-width: 70%;
+  flex-direction: row;
+  justify-content: space-between;
+
+  h3 {
+    color: red;
+    padding: 0.5em;
+    margin: 0;
+  }
+
+  span {
+    display: inline-block;
+    margin-right: 0.5em;
+    cursor: pointer;
+  }
+}

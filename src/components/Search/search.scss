@@ -1,0 +1,38 @@
+@import "../../styles/global.scss";
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1em;
+
+  input {
+    flex: 0.8;
+    padding: 0.5em;
+    border: 1px solid $grey-light;
+    border-radius: 0.5em;
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    text-transform: uppercase;
+    flex: 0.2;
+    margin-left: 1em;
+    padding: 0.8em;
+    background-color: #ffffff;
+    font-weight: bold;
+    border-radius: 0.5em;
+    outline: none;
+
+
+
+    &:active{
+      transform: translateY(0.1em);
+    }
+  }
+
+}

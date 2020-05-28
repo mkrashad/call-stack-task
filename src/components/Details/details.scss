@@ -1,0 +1,58 @@
+@import "src/styles/global.scss";
+
+.detailsTopContainer {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: 1em;
+  flex-direction: column;
+
+  .imageContainer {
+    display: flex;
+    flex: 0.5;
+    justify-content: center;
+    img {
+      max-width: 200px;
+      max-height: 200px;
+    }
+  }
+
+  .contentContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 2em 2em;
+
+    p {
+      margin: 0;
+    }
+
+
+    .detail {
+      display: flex;
+      flex-direction: row;
+
+
+      span {
+        flex: 0.9;
+        justify-content: flex-end;
+        text-align: right;
+      }
+
+
+      strong, a {
+        flex: 1;
+        align-self: flex-end;
+        padding-left: 2em;
+        white-space: nowrap;
+
+        span {
+          margin-left: 0.5em;
+          color: $accent;
+        }
+      }
+
+    }
+  }
+
+}

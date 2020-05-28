@@ -1,0 +1,23 @@
+@import "src/styles/global.scss";
+
+.loadingContainer {
+  animation: rotatingAnim 1s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    font-size: 3em;
+    color: $accent;
+  }
+}
+
+
+
+@keyframes rotatingAnim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

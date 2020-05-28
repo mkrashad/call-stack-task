@@ -1,0 +1,9 @@
+{
+  "extends": "@callstack",
+  "rules": {
+    "react-native/no-raw-text": 0
+  },
+  "globals": {
+    "document": true
+  }
+}
