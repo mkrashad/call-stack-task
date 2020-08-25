@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './search.scss';
 import { fetchGitHubRepo } from '../../api';
 
@@ -7,15 +7,17 @@ import { fetchGitHubRepo } from '../../api';
  * updateLoadingState - method that changes loading state (boolean)
  */
 function Search({ onSearchResults, updateLoadingState, stopUpdating }) {
-  const [text, updateText] = React.useState('');
+  const [text, updateText] = useState('');
 
   async function fetchItems() {
     updateLoadingState(true)
-
     const result = await fetchGitHubRepo(text);
     onSearchResults && onSearchResults(result);
     updateLoadingState(false);
   }
+
+
+
 
   return (
     <div className="searchContainer">

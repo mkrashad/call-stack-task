@@ -7,6 +7,7 @@ import Loading from './components/Loading';
 import Cell from './components/Cell';
 import Details from './components/Details';
 import Sort from './components/Sort';
+import Pagination from './components/Pagination';
 
 function App() {
   const [isLoading, setLoadingState] = useState(false);
@@ -14,6 +15,8 @@ function App() {
   const [repositories, updateRepositories] = useState([]);
   const [selectedRepoDetails, updateSelectedDetails] = useState(null);
   const [favoriteReposList, updateFavoriteReposList] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [repoPerPage] = useState(20);
 
   /**
    * Called when GitHub API calls finishes
@@ -38,6 +41,14 @@ function App() {
       updateRepositories(repos || []);
     }
   }
+
+  // Get currrent repo
+  const indexOfLastRepo = currentPage * repoPerPage;
+  const indexFirstRepo = indexOfLastRepo - repoPerPage;
+  const currentRepo = repositories.slice(indexFirstRepo, indexOfLastRepo);
+
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
 
   /**
    *
@@ -74,9 +85,9 @@ function App() {
         {hasResults ? (
           <div className="resultContainer">
             <Sort onSort={updateRepositories} currentRepos={repositories} />
-            {repositories.map(repo => (
+            {currentRepo.map(repo => (
               <Cell
-                  onAddToFavorite={(repoId) => onAddToFavorite(repoId)}
+                onAddToFavorite={repoId => onAddToFavorite(repoId)}
                 onPress={() => updateSelectedDetails(repo)}
                 key="repo"
                 id={repo.id}
@@ -86,16 +97,20 @@ function App() {
                 stars={repo.stars}
                 timestamp={repo.timestamp}
                 url={repo.url}
-                  isFavorite={favoriteReposList.includes(repo.id)}
+                isFavorite={favoriteReposList.includes(repo.id)}
               />
             ))}
           </div>
         ) : null}
       </div>
-
       <div className="detailsContainer">
         <Details repo={selectedRepoDetails} />
       </div>
+      <Pagination
+        repoPerPage={repoPerPage}
+        totalRepo={repositories.length}
+        paginate={paginate}
+      />
     </div>
   );
 }
