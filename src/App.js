@@ -75,6 +75,7 @@ function App() {
         <Search
           updateLoadingState={setLoadingState}
           onSearchResults={onSearchResults}
+          // enterPress={enterPress(e)}
         />
 
         {errorMessage ? (
@@ -105,6 +106,7 @@ function App() {
       </div>
       <div className="detailsContainer">
         <Details repo={selectedRepoDetails} />
+        <a href="https://reactjs.org/docs/getting-started.html">Learn React</a>
       </div>
       <Pagination
         repoPerPage={repoPerPage}

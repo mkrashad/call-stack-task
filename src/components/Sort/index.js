@@ -34,20 +34,18 @@ function Sort({ currentRepos, onSort }) {
 
   return (
     <div className="sortContainer">
-        <button
-          onClick={() => {
-            sort('title');
-          }}>
-            {`Name ${currentKey === 'title' ? orderArrows[currentOrder] : ''}`}
-        </button>
-        <button
-          onClick={() => {
-            sort('stars');
-          }}>
-            {`Stars ${
-              currentKey === 'stars' ? orderArrows[currentOrder] : ''
-            }`}
-        </button>
+      <button
+        onClick={() => {
+          sort('title');
+        }}>
+        {`Name ${currentKey === 'title' ? orderArrows[currentOrder] : ''}`}
+      </button>
+      <button
+        onClick={() => {
+          sort('stars');
+        }}>
+        {`Stars ${currentKey === 'stars' ? orderArrows[currentOrder] : ''}`}
+      </button>
     </div>
   );
 }
