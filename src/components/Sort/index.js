@@ -17,10 +17,11 @@ function Sort({ currentRepos, onSort }) {
   const [currentOrder, updateOrder] = useState(1);
 
   function sort(key) {
-    updateKey({
-      currentKey: '',
-    });
-    let order = currentKey === key ? -1 : 1;
+    let order = currentOrder;
+
+    if (key === currentKey) {
+      order = currentOrder === 1 ? -1 : 1;
+    }
 
     const sortedRepos = [...currentRepos].sort((a, b) => {
       if (a[key] < b[key]) return -1 * order;
@@ -31,7 +32,9 @@ function Sort({ currentRepos, onSort }) {
     if (key !== currentKey) {
       updateKey(key);
     }
+
     updateOrder(order);
+
     onSort(sortedRepos);
   }
 
