@@ -32,9 +32,7 @@ function Cell({
       </button>
       <div onClick={onPress} className="rowContent">
         <img alt="github repo owner" src={avatar} />
-
         <p className="owner">{`${owner}/${title}`}</p>
-
         <div className="stars">
           <p>{stars}</p>
           <span>&#9733;</span>

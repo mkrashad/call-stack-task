@@ -1,16 +1,23 @@
-
 .sortContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1em;
 
+
   button {
     text-transform: uppercase;
-    flex: 0.2;
-    padding: 0.8em 1.6em;
     font-weight: bold;
     border-radius: 0.5em;
     outline: none;
+    background-color: white;
+  }
+}
+
+@media screen and (max-width: 645px) {
+  .sortContainer {
+    button {
+      font-size: 12px;
+    }
   }
 }

@@ -29,13 +29,14 @@ function Search({ onSearchResults, updateLoadingState }) {
   };
 
   return (
-    <div className="searchContainer">
+    <div className="input-group input-group-sm mb-3">
       <input
         value={text}
         placeholder="Github repository name"
         onChange={({ target: { value } }) => updateText(value)}
         type="text"
         onKeyDown={handleKeyPress}
+        className="form-control"
       />
     </div>
   );

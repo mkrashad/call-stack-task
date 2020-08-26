@@ -41,12 +41,14 @@ function Sort({ currentRepos, onSort }) {
   return (
     <div className="sortContainer">
       <button
+        className="btn"
         onClick={() => {
           sort('title');
         }}>
         {`Name ${currentKey === 'title' ? orderArrows[currentOrder] : ''}`}
       </button>
       <button
+        className="btn "
         onClick={() => {
           sort('stars');
         }}>
