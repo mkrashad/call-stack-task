@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import './App.scss';
 
 import Search from './components/Search';
@@ -75,7 +76,6 @@ function App() {
         <Search
           updateLoadingState={setLoadingState}
           onSearchResults={onSearchResults}
-          // enterPress={enterPress(e)}
         />
 
         {errorMessage ? (
@@ -90,7 +90,7 @@ function App() {
               <Cell
                 onAddToFavorite={repoId => onAddToFavorite(repoId)}
                 onPress={() => updateSelectedDetails(repo)}
-                key="repo"
+                key={uuidv4()}
                 id={repo.id}
                 avatar={repo.avatar}
                 owner={repo.owner}
