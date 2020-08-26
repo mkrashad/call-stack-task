@@ -8,7 +8,7 @@ const cache = {};
  * onSearchStart - method that accepts a search keyword (string)
  * updateLoadingState - method that changes loading state (boolean)
  */
-function Search({ onSearchResults, updateLoadingState, stopUpdating }) {
+function Search({ onSearchResults, updateLoadingState }) {
   const [text, updateText] = useState('');
 
   async function fetchItems() {

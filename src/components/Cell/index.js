@@ -18,27 +18,28 @@ function Cell({
   title,
   owner,
   stars,
-  timestamp,
   avatar,
-  url,
-    isFavorite,
+  isFavorite,
   onPress,
-    onAddToFavorite,
+  onAddToFavorite,
 }) {
   return (
-    <div  className="rowContainer">
+    <div className="rowContainer">
+      <button
+        onClick={() => onAddToFavorite(id)}
+        className={`favoriteContainer ${isFavorite ? 'favoriteRepo' : ''}`}>
+        <p>&#9829;</p>
+      </button>
+      <div onClick={onPress} className="rowContent">
+        <img alt="github repo owner" src={avatar} />
 
-        <button onClick={() => onAddToFavorite(id)} className={`favoriteContainer ${isFavorite ? 'favoriteRepo' : ''}`}><p>&#9829;</p></button>
-        <div onClick={onPress} className="rowContent">
-          <img alt="github repo owner" src={avatar} />
+        <p className="owner">{`${owner}/${title}`}</p>
 
-          <p className="owner">{`${owner}/${title}`}</p>
-
-          <div className="stars">
-            <p>{stars}</p>
-            <span>&#9733;</span>
-          </div>
+        <div className="stars">
+          <p>{stars}</p>
+          <span>&#9733;</span>
         </div>
+      </div>
     </div>
   );
 }
